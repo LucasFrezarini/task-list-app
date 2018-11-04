@@ -18,7 +18,9 @@ public class NewTask extends Activity {
 
     private EditText txtTaskTitle;
     private EditText txtTaskDescription;
-    private EditText txtTaskDate;
+    private EditText txtTaskDay;
+    private EditText txtTaskMonth;
+    private EditText txtTaskYear;
     private CheckBox chkTaskDone;
 
     @Override
@@ -28,12 +30,22 @@ public class NewTask extends Activity {
 
         this.txtTaskTitle = findViewById(R.id.inputTaskTitle);
         this.txtTaskDescription = findViewById(R.id.inputTaskDescription);
-        this.txtTaskDate = findViewById(R.id.inputTaskDate);
         this.chkTaskDone = findViewById(R.id.isTaskDone);
+        this.txtTaskDay = findViewById(R.id.inputTaskDay);
+        this.txtTaskMonth = findViewById(R.id.inputTaskMonth);
+        this.txtTaskYear = findViewById(R.id.inputTaskYear);
     }
 
     public void saveTask(View view) {
-        Task task = new Task(txtTaskTitle.getText().toString(), txtTaskDescription.getText().toString(), Calendar.getInstance(), chkTaskDone.isChecked());
+        Calendar date = Calendar.getInstance();
+
+        int day = Integer.parseInt(txtTaskDay.getText().toString());
+        int month = Integer.parseInt(txtTaskMonth.getText().toString());
+        int year = Integer.parseInt(txtTaskYear.getText().toString());
+
+        date.set(year, month, day);
+
+        Task task = new Task(txtTaskTitle.getText().toString(), txtTaskDescription.getText().toString(), date, chkTaskDone.isChecked());
 
         DatabaseController dc = new DatabaseController(this.getBaseContext());
         if(dc.saveTask(task)) {
