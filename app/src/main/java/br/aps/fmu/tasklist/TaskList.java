@@ -120,7 +120,6 @@ public class TaskList extends AppCompatActivity {
 
         this.taskAdapter.swapCursor(cursor);
         this.taskAdapter.notifyDataSetChanged();
-
     }
 
     public void newTask(View view) {

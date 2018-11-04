@@ -33,7 +33,7 @@
                 android:text="Sex"
                 android:textSize="25sp"
                 android:gravity="center"
-                android:id="@+id/rowDayOfWeek"/>
+                android:id="@+id/rowDayOfMonth"/>
         </LinearLayout>
 
         <LinearLayout

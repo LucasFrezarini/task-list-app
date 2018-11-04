@@ -22,4 +22,16 @@
     <string name="save_error">Error while trying to save the task</string>
     <string name="edit_success">Task updated successfully</string>
     <string name="edit_error">Error while trying to update the task</string>
+    <string name="short_january">Jan</string>
+    <string name="short_february">Feb</string>
+    <string name="short_march">Mar</string>
+    <string name="short_april">Apr</string>
+    <string name="short_may">May</string>
+    <string name="short_june">June</string>
+    <string name="short_july">July</string>
+    <string name="short_august">Aug</string>
+    <string name="short_october">Oct</string>
+    <string name="short_september">Sept</string>
+    <string name="short_november">Nov</string>
+    <string name="short_december">Dec</string>
 </resources>

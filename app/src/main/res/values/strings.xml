@@ -19,6 +19,20 @@
     <string name="short_friday">Sex</string>
     <string name="short_saturday">Sáb</string>
 
+    <string name="short_january">Jan</string>
+    <string name="short_february">Fev</string>
+    <string name="short_march">Mar</string>
+    <string name="short_april">Abr</string>
+    <string name="short_may">Mai</string>
+    <string name="short_june">Jun</string>
+    <string name="short_july">Jul</string>
+    <string name="short_august">Ago</string>
+    <string name="short_september">Set</string>
+    <string name="short_october">Out</string>
+    <string name="short_november">Nov</string>
+    <string name="short_december">Dez</string>
+
+
     <string name="save_success">Tarefa salva com sucesso</string>
     <string name="save_error">Erro ao salvar a tarefa</string>
     <string name="edit_success">Tarefa alterada com sucesso</string>

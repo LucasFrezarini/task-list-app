@@ -57,7 +57,7 @@ public class TaskForm extends AppCompatActivity {
             this.txtTaskDescription.setText(task.getDescription());
             this.chkTaskDone.setChecked(task.isDone());
             this.txtTaskDay.setText(String.valueOf(task.getDate().get(Calendar.DAY_OF_MONTH)));
-            this.txtTaskMonth.setText(String.valueOf(task.getDate().get(Calendar.MONTH)));
+            this.txtTaskMonth.setText(String.valueOf(task.getDate().get(Calendar.MONTH) + 1));
             this.txtTaskYear.setText(String.valueOf(task.getDate().get(Calendar.YEAR)));
         }
     }
@@ -66,7 +66,7 @@ public class TaskForm extends AppCompatActivity {
         Calendar date = Calendar.getInstance();
 
         int day = Integer.parseInt(txtTaskDay.getText().toString());
-        int month = Integer.parseInt(txtTaskMonth.getText().toString());
+        int month = Integer.parseInt(txtTaskMonth.getText().toString()) - 1;
         int year = Integer.parseInt(txtTaskYear.getText().toString());
 
         date.set(year, month, day);
