@@ -14,7 +14,7 @@ import br.aps.fmu.tasklist.db.Database;
 import br.aps.fmu.tasklist.db.DatabaseController;
 import br.aps.fmu.tasklist.models.Task;
 
-public class NewTask extends Activity {
+public class NewTask extends AppCompatActivity {
 
     private EditText txtTaskTitle;
     private EditText txtTaskDescription;

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TaskList</string>
+    <string name="app_name">Lista de Tarefas</string>
     <string name="new_task">Nova Tarefa</string>
     <string name="task_title">Título</string>
     <string name="task_description">Descrição</string>
