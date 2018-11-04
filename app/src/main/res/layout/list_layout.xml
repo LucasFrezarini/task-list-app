@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="3"
+                android:textSize="35sp"
+                android:id="@+id/rowDay"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Sex"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:id="@+id/rowDayOfWeek"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:layout_margin="2dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Evento do dia 12"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:id="@+id/rowTitle"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Lorem Ipsum Dolen adasdasdasdadsdsadsa"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:id="@+id/rowDescription"
+                android:ellipsize="end"
+                android:maxLines="2"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

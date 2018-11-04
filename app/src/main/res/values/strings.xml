@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">TaskList</string>
+    <string name="new_task">Nova Tarefa</string>
+    <string name="task_title">Título</string>
+    <string name="task_description">Descrição</string>
+    <string name="task_done">Realizada</string>
+    <string name="task_date">Data</string>
+    <string name="task_input_title_hint">Título da tarefa</string>
+    <string name="task_input_description_hint">Descrição da tarefa</string>
+    <string name="task_input_date_hint">Data da tarefa</string>
+    <string name="task_input_done">Realizada</string>
+    <string name="save">Salvar</string>
+    
+    <string name="short_sunday">Dom</string>
+    <string name="short_monday">Seg</string>
+    <string name="short_tuesday">Ter</string>
+    <string name="short_wednesday">Qua</string>
+    <string name="short_thursday">Qui</string>
+    <string name="short_friday">Sex</string>
+    <string name="short_saturday">Sab</string>
+</resources>
