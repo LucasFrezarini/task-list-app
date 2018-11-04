@@ -1,6 +1,5 @@
 package br.aps.fmu.tasklist;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
@@ -11,21 +10,18 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Locale;
 
 import br.aps.fmu.tasklist.adapters.TaskListAdapter;
 import br.aps.fmu.tasklist.db.Database;
 import br.aps.fmu.tasklist.db.DatabaseController;
-import br.aps.fmu.tasklist.models.Task;
 
 public class TaskList extends AppCompatActivity {
 
     private ListView tasksListView;
+    private TaskListAdapter taskAdapter;
     private Spinner spnLanguage;
     private boolean spinnerLoaded = false;
     private Bundle extras;
@@ -43,11 +39,11 @@ public class TaskList extends AppCompatActivity {
         DatabaseController dc = new DatabaseController(getBaseContext());
         final Cursor cursor = dc.loadTasks();
 
-        TaskListAdapter taskAdapter = new TaskListAdapter(
+        this.taskAdapter = new TaskListAdapter(
                 getBaseContext(), cursor, 0);
 
         this.tasksListView = findViewById(R.id.tasksList);
-        this.tasksListView.setAdapter(taskAdapter);
+        this.tasksListView.setAdapter(this.taskAdapter);
 
         final String[] languages = new String[]{"Português", "English"};
         final String language = extras.getString("language", "Português");
@@ -59,6 +55,22 @@ public class TaskList extends AppCompatActivity {
 
         this.spnLanguage.setSelection(language.equals("Português") ? 0 : 1);
 
+        this.tasksListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                cursor.moveToPosition(i);
+
+                Intent it = new Intent(getBaseContext(), TaskForm.class);
+                Bundle bundle = new Bundle();
+
+                bundle.putInt("id", cursor.getInt(cursor.getColumnIndex(Database.ID)));
+                bundle.putString("operation", "edit");
+
+                it.putExtras(bundle);
+                startActivity(it);
+            }
+        });
+        // Lógica para mudar o idioma
         this.spnLanguage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View selectedItemView, int position, long l) {
@@ -100,8 +112,19 @@ public class TaskList extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        DatabaseController dc = new DatabaseController(getBaseContext());
+        final Cursor cursor = dc.loadTasks();
+
+        this.taskAdapter.swapCursor(cursor);
+        this.taskAdapter.notifyDataSetChanged();
+
+    }
+
     public void newTask(View view) {
-        Intent it = new Intent(this, NewTask.class);
+        Intent it = new Intent(this, TaskForm.class);
 
         startActivity(it);
     }

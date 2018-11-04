@@ -18,4 +18,8 @@
     <string name="short_thursday">Thu</string>
     <string name="short_friday">Fri</string>
     <string name="short_saturday">Sat</string>
+    <string name="save_success">Task saved successfully</string>
+    <string name="save_error">Error while trying to save the task</string>
+    <string name="edit_success">Task updated successfully</string>
+    <string name="edit_error">Error while trying to update the task</string>
 </resources>

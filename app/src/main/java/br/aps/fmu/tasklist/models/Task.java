@@ -5,6 +5,7 @@ import java.util.Calendar;
 
 public class Task {
 
+    private int id;
     private String title;
     private String description;
     private Calendar date;
@@ -55,4 +56,8 @@ public class Task {
     public void setDone(boolean done) {
         this.done = done;
     }
+
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 }

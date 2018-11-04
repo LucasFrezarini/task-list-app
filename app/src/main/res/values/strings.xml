@@ -17,5 +17,10 @@
     <string name="short_wednesday">Qua</string>
     <string name="short_thursday">Qui</string>
     <string name="short_friday">Sex</string>
-    <string name="short_saturday">Sab</string>
+    <string name="short_saturday">Sáb</string>
+
+    <string name="save_success">Tarefa salva com sucesso</string>
+    <string name="save_error">Erro ao salvar a tarefa</string>
+    <string name="edit_success">Tarefa alterada com sucesso</string>
+    <string name="edit_error">Erro ao alterar a tarefa</string>
 </resources>

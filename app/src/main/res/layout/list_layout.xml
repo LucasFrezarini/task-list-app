@@ -8,6 +8,14 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorDone"
+            android:id="@+id/legendDone"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"

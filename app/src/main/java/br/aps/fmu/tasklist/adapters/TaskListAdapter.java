@@ -2,10 +2,12 @@ package br.aps.fmu.tasklist.adapters;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Calendar;
@@ -35,9 +37,11 @@ public class TaskListAdapter extends CursorAdapter {
         TextView txtViewDayOfWeek = view.findViewById(R.id.rowDayOfWeek);
         TextView txtViewTitle = view.findViewById(R.id.rowTitle);
         TextView txtViewDescription = view.findViewById(R.id.rowDescription);
+        LinearLayout legendIsDone = view.findViewById(R.id.legendDone);
 
         String title = cursor.getString(cursor.getColumnIndex(Database.TITLE));
         String description = cursor.getString(cursor.getColumnIndex(Database.DESCRIPTION));
+        boolean done = cursor.getInt(cursor.getColumnIndex(Database.DONE)) == 1;
 
         long timeInMillis = cursor.getLong(cursor.getColumnIndex(Database.DATE));
 
@@ -52,5 +56,9 @@ public class TaskListAdapter extends CursorAdapter {
         String dayOfWeek = DateHelper.getShortenDayOfWeek(context, date.get(Calendar.DAY_OF_WEEK) - 1);
 
         txtViewDayOfWeek.setText(dayOfWeek);
+
+        if(!done) {
+            legendIsDone.setBackgroundResource(R.color.colorPrimary);
+        }
     }
 }
