@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ public class TaskForm extends AppCompatActivity {
     private EditText txtTaskMonth;
     private EditText txtTaskYear;
     private CheckBox chkTaskDone;
+    private Button btnRemove;
     private String operation;
     private int taskId;
     private Bundle extras;
@@ -38,6 +40,7 @@ public class TaskForm extends AppCompatActivity {
         this.txtTaskDay = findViewById(R.id.inputTaskDay);
         this.txtTaskMonth = findViewById(R.id.inputTaskMonth);
         this.txtTaskYear = findViewById(R.id.inputTaskYear);
+        this.btnRemove = findViewById(R.id.btnRemove);
 
         this.extras = getIntent().getExtras();
 
@@ -59,6 +62,8 @@ public class TaskForm extends AppCompatActivity {
             this.txtTaskDay.setText(String.valueOf(task.getDate().get(Calendar.DAY_OF_MONTH)));
             this.txtTaskMonth.setText(String.valueOf(task.getDate().get(Calendar.MONTH) + 1));
             this.txtTaskYear.setText(String.valueOf(task.getDate().get(Calendar.YEAR)));
+
+            this.btnRemove.setVisibility(View.VISIBLE);
         }
     }
 
@@ -91,6 +96,17 @@ public class TaskForm extends AppCompatActivity {
             } else {
                 Toast.makeText(getBaseContext(), getBaseContext().getString(R.string.edit_error), Toast.LENGTH_LONG).show();
             }
+        }
+    }
+
+    public void removeTask(View view) {
+        DatabaseController dc = new DatabaseController(this.getBaseContext());
+
+        if(dc.removeTask(taskId)) {
+            Toast.makeText(getBaseContext(), getBaseContext().getString(R.string.remove_success), Toast.LENGTH_LONG).show();
+            finish();
+        } else {
+            Toast.makeText(getBaseContext(), getBaseContext().getString(R.string.remove_error), Toast.LENGTH_LONG).show();
         }
     }
 }

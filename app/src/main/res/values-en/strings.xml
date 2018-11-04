@@ -22,6 +22,8 @@
     <string name="save_error">Error while trying to save the task</string>
     <string name="edit_success">Task updated successfully</string>
     <string name="edit_error">Error while trying to update the task</string>
+    <string name="remove_success">Task removed successfully</string>
+    <string name="remove_error">Error while trying to remove the task</string>
     <string name="short_january">Jan</string>
     <string name="short_february">Feb</string>
     <string name="short_march">Mar</string>
@@ -34,4 +36,5 @@
     <string name="short_september">Sept</string>
     <string name="short_november">Nov</string>
     <string name="short_december">Dec</string>
+    <string name="delete">Delete</string>
 </resources>

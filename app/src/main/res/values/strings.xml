@@ -10,6 +10,7 @@
     <string name="task_input_date_hint">Data da tarefa</string>
     <string name="task_input_done">Realizada</string>
     <string name="save">Salvar</string>
+    <string name="delete">Remover</string>
     
     <string name="short_sunday">Dom</string>
     <string name="short_monday">Seg</string>
@@ -37,4 +38,6 @@
     <string name="save_error">Erro ao salvar a tarefa</string>
     <string name="edit_success">Tarefa alterada com sucesso</string>
     <string name="edit_error">Erro ao alterar a tarefa</string>
+    <string name="remove_success">Tarefa excluída com sucesso</string>
+    <string name="remove_error">Erro ao excluir a tarefa</string>
 </resources>

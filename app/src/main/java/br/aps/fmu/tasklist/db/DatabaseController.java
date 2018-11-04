@@ -55,6 +55,16 @@ public class DatabaseController {
         return result != -1;
     }
 
+    public boolean removeTask(int id) {
+        String where = Database.ID + " = " + id;
+
+        this.db = database.getWritableDatabase();
+
+        long result = this.db.delete(Database.TABLE, where, null);
+
+        return result != -1;
+    }
+
     public Task getTaskById(int id) {
         String[] fields = {Database.ID, Database.DATE, Database.DESCRIPTION, Database.TITLE, Database.DONE};
 
@@ -62,8 +72,7 @@ public class DatabaseController {
 
         String where = Database.ID + " = " + id;
 
-        Cursor cursor = this.db
-                .query(Database.TABLE, fields, where, null, null, null, null);
+        Cursor cursor = this.db.query(Database.TABLE, fields, where, null, null, null, null);
 
         if(cursor != null) {
             cursor.moveToFirst();
@@ -80,11 +89,11 @@ public class DatabaseController {
             date.setTimeInMillis(cursor.getLong(cursor.getColumnIndex(Database.DATE)));
             t.setDate(date);
 
+            cursor.close();
             this.db.close();
 
             return t;
         }
-
 
         this.db.close();
         return null;

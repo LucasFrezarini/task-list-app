@@ -94,6 +94,16 @@
             android:layout_height="wrap_content"
             android:text="@string/save"
             android:onClick="saveTask"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete"
+            android:backgroundTint="@color/colorAlert"
+            android:textColor="#fff"
+            android:onClick="removeTask"
+            android:visibility="gone"
+            android:id="@+id/btnRemove"/>
     </LinearLayout>
+
 
 </LinearLayout>
