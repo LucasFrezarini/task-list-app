@@ -25,6 +25,7 @@ public class TaskList extends AppCompatActivity {
     private Spinner spnLanguage;
     private boolean spinnerLoaded = false;
     private Bundle extras;
+    private Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class TaskList extends AppCompatActivity {
         }
 
         DatabaseController dc = new DatabaseController(getBaseContext());
-        final Cursor cursor = dc.loadTasks();
+        cursor = dc.loadTasks();
 
         this.taskAdapter = new TaskListAdapter(
                 getBaseContext(), cursor, 0);
@@ -116,7 +117,7 @@ public class TaskList extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         DatabaseController dc = new DatabaseController(getBaseContext());
-        final Cursor cursor = dc.loadTasks();
+        cursor = dc.loadTasks();
 
         this.taskAdapter.swapCursor(cursor);
         this.taskAdapter.notifyDataSetChanged();
